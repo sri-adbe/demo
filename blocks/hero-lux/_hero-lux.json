@@ -1,0 +1,48 @@
+{
+  "definitions": [
+    {
+      "title": "Hero Lux",
+      "id": "hero-lux",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Hero Lux",
+              "model": "hero-lux"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "hero-lux",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "imageAlt",
+          "label": "Alt",
+          "value": ""
+        },
+        {
+          "component": "richtext",
+          "name": "text",
+          "value": "",
+          "label": "Headline, subline and button",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

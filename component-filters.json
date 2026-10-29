@@ -24,13 +24,43 @@
       "table",
       "text",
       "title",
-      "video"
+      "video",
+      "hero-lux",
+      "hero-cta",
+      "cards-curator",
+      "cards-destination",
+      "cards-service",
+      "cards-testimonial"
     ]
   },
   {
     "id": "accordion",
     "components": [
       "accordion-item"
+    ]
+  },
+  {
+    "id": "cards-curator",
+    "components": [
+      "cards-curator-item"
+    ]
+  },
+  {
+    "id": "cards-destination",
+    "components": [
+      "cards-destination-item"
+    ]
+  },
+  {
+    "id": "cards-service",
+    "components": [
+      "cards-service-item"
+    ]
+  },
+  {
+    "id": "cards-testimonial",
+    "components": [
+      "cards-testimonial-item"
     ]
   },
   {
