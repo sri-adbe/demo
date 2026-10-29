@@ -457,7 +457,7 @@ var CustomImportScript = (() => {
       const main = document2.body;
       const meta = WebImporter.Blocks.getMetadata(document2) || {};
       const template = document2.querySelector("meta[name='template']");
-      if (template && template.content) meta.Template = template.content;
+      if (template && template.content) meta.template = template.content;
       executeTransformers("beforeTransform", main, payload);
       const pageBlocks = findBlocksOnPage(document2, PAGE_TEMPLATE);
       pageBlocks.forEach((block) => {

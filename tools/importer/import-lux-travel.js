@@ -199,7 +199,8 @@ export default {
     // Read page metadata before transformers strip the head-level tags.
     const meta = WebImporter.Blocks.getMetadata(document) || {};
     const template = document.querySelector('meta[name=\'template\']');
-    if (template && template.content) meta.Template = template.content;
+    // lowercase key so it maps onto the page model's `template` field in AEM
+    if (template && template.content) meta.template = template.content;
 
     executeTransformers('beforeTransform', main, payload);
 
