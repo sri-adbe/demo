@@ -32,18 +32,20 @@ export function readFragmentPath(row) {
  * Fetches one fragment through a persisted query that takes a `path` variable.
  * @param {string} query Persisted query name, e.g. `destination-by-path`
  * @param {string} path Fragment path in the DAM
- * @returns {Promise<Object|null>} The fragment's fields, or null if unavailable
+ * @returns {Promise<{item: Object|null, error: string}>} The fragment's fields, or why
+ * they couldn't be loaded
  */
 export async function fetchFragment(query, path) {
   const url = `${aemHost}/graphql/execute.json/${GRAPHQL_CONFIG}/${query};path=${encodeURIComponent(path)}`;
   try {
     const resp = await fetch(url, isAuthor ? { credentials: 'include' } : {});
-    if (!resp.ok) return null;
-    const { data } = await resp.json();
-    const result = data && Object.values(data)[0];
-    return result?.item || null;
+    if (!resp.ok) return { item: null, error: `HTTP ${resp.status} from ${query}` };
+    const { data, errors } = await resp.json();
+    const item = data && Object.values(data)[0]?.item;
+    if (item) return { item, error: '' };
+    return { item: null, error: errors?.[0]?.message || 'no fragment at this path' };
   } catch (e) {
-    return null;
+    return { item: null, error: e.message };
   }
 }
 

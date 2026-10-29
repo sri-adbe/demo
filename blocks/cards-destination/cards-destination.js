@@ -56,9 +56,9 @@ export default async function decorate(block) {
   await Promise.all([...block.children].map(async (row) => {
     const path = readFragmentPath(row);
     if (!path) return;
-    const fragment = await fetchFragment('destination-by-path', path);
-    if (fragment) renderDestination(row, path, fragment);
-    else if (!showFragmentPlaceholder(row, `Destination fragment not available: ${path}`)) row.remove();
+    const { item, error } = await fetchFragment('destination-by-path', path);
+    if (item) renderDestination(row, path, item);
+    else if (!showFragmentPlaceholder(row, `Destination fragment not available: ${path} (${error})`)) row.remove();
   }));
 
   buildCardList(block, 'cards-destination', '1200').forEach((card) => {
