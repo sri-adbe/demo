@@ -36,7 +36,9 @@ export function readFragmentPath(row) {
  * they couldn't be loaded
  */
 export async function fetchFragment(query, path) {
-  const url = `${aemHost}/graphql/execute.json/${GRAPHQL_CONFIG}/${query};path=${encodeURIComponent(path)}`;
+  // AEM reads the variable as-is, so slashes must stay unencoded; only encode each segment
+  const pathParam = path.split('/').map(encodeURIComponent).join('/');
+  const url = `${aemHost}/graphql/execute.json/${GRAPHQL_CONFIG}/${query};path=${pathParam}`;
   try {
     const resp = await fetch(url, isAuthor ? { credentials: 'include' } : {});
     if (!resp.ok) return { item: null, error: `HTTP ${resp.status} from ${query}` };
