@@ -12,6 +12,8 @@ import { moveInstrumentation } from './scripts.js';
  * @param {Array} breakpoints Breakpoints for createOptimizedPicture
  */
 function optimizeImage(img, breakpoints) {
+  // images served by another host (e.g. Content Fragment assets from AEM) come pre-sized
+  if (new URL(img.src, window.location.href).origin !== window.location.origin) return;
   const optimized = createOptimizedPicture(img.src, img.alt, false, breakpoints);
   moveInstrumentation(img, optimized.querySelector('img'));
   img.closest('picture').replaceWith(optimized);

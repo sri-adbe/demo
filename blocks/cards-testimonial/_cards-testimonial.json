@@ -36,11 +36,13 @@
       "id": "cards-testimonial-item",
       "fields": [
         {
-          "component": "richtext",
-          "name": "text",
-          "value": "",
-          "label": "Quote and attribution",
-          "valueType": "string"
+          "component": "aem-content-fragment",
+          "name": "fragment",
+          "label": "Testimonial fragment",
+          "valueType": "string",
+          "validation": {
+            "rootPath": "/content/dam/demo/testimonials"
+          }
         }
       ]
     }

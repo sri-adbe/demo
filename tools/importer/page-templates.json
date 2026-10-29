@@ -1,0 +1,154 @@
+{
+  "templates": [
+    {
+      "name": "lux-travel",
+      "urls": [
+        "https://aem-20261026-1355--aaa-test--sri-adbe.aem.live/lux-travel"
+      ],
+      "representativeUrl": "https://aem-20261026-1355--aaa-test--sri-adbe.aem.live/lux-travel",
+      "description": "Lux Travel landing page: photo hero, curator cards, destination cards, service cards, testimonials and closing CTA",
+      "blocks": [
+        {
+          "name": "hero-lux",
+          "instances": [
+            ".hero-lux.block",
+            "div.hero-lux"
+          ]
+        },
+        {
+          "name": "cards-curator",
+          "instances": [
+            ".cards-curator.block",
+            "div.cards-curator"
+          ]
+        },
+        {
+          "name": "cards-destination",
+          "instances": [
+            ".cards-destination.block",
+            "div.cards-destination"
+          ]
+        },
+        {
+          "name": "cards-service",
+          "instances": [
+            ".cards-service.block",
+            "div.cards-service"
+          ]
+        },
+        {
+          "name": "cards-testimonial",
+          "instances": [
+            ".cards-testimonial.block",
+            "div.cards-testimonial"
+          ]
+        },
+        {
+          "name": "hero-cta",
+          "instances": [
+            ".hero-cta.block",
+            "div.hero-cta"
+          ]
+        }
+      ],
+      "urlPattern": "/*",
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "hero",
+          "selector": [
+            ".section.hero-lux-container"
+          ],
+          "style": null,
+          "blocks": [
+            "hero-lux"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "curators",
+          "selector": [
+            ".section.cards-curator-container"
+          ],
+          "style": "sand",
+          "blocks": [
+            "cards-curator"
+          ],
+          "defaultContent": [
+            ".section.cards-curator-container > .default-content-wrapper"
+          ]
+        },
+        {
+          "id": "section-3",
+          "name": "divider",
+          "selector": [
+            ".section.divider"
+          ],
+          "style": "sand, divider",
+          "blocks": [],
+          "defaultContent": [
+            ".section.divider > .default-content-wrapper"
+          ]
+        },
+        {
+          "id": "section-4",
+          "name": "destinations",
+          "selector": [
+            ".section.cards-destination-container"
+          ],
+          "style": null,
+          "blocks": [
+            "cards-destination"
+          ],
+          "defaultContent": [
+            ".section.cards-destination-container > .default-content-wrapper"
+          ]
+        },
+        {
+          "id": "section-5",
+          "name": "services",
+          "selector": [
+            ".section.cards-service-container"
+          ],
+          "style": "sand, centered",
+          "blocks": [
+            "cards-service"
+          ],
+          "defaultContent": [
+            ".section.cards-service-container > .default-content-wrapper"
+          ]
+        },
+        {
+          "id": "section-6",
+          "name": "testimonials",
+          "selector": [
+            ".section.cards-testimonial-container"
+          ],
+          "style": null,
+          "blocks": [
+            "cards-testimonial"
+          ],
+          "defaultContent": [
+            ".section.cards-testimonial-container > .default-content-wrapper"
+          ]
+        },
+        {
+          "id": "section-7",
+          "name": "closing-cta",
+          "selector": [
+            ".section.hero-cta-container"
+          ],
+          "style": null,
+          "blocks": [
+            "hero-cta"
+          ],
+          "defaultContent": []
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "projectType": "xwalk"
+  }
+}

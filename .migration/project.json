@@ -1,0 +1,15 @@
+{
+  "type": "xwalk",
+  "sites": {
+    "demo": {
+      "libraryUrl": "https://main--sta-xwalk-boilerplate--aemysites.aem.page/tools/sidekick/library.json",
+      "previewOrg": "sri-adbe",
+      "previewSite": "demo",
+      "contentHostUrl": "author-p111858-e1309055.adobeaemcloud.com",
+      "aemSitePath": "/content/demo",
+      "aemAssetsFolderPath": "/content/dam/demo",
+      "aemSiteName": "demo",
+      "aemSiteTitle": "demo"
+    }
+  }
+}

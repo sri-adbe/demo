@@ -1,0 +1,13 @@
+{
+  "variantName": "cards-service",
+  "baseBlock": "cards",
+  "visualCharacteristics": "4-up text-only cards with index number, arrow glyph, H3 and description",
+  "reuseGuidance": "Lux template ('Template: lux'); reuse for the same content model and layout.",
+  "usage": {
+    "pagesUsing": [
+      "/lux-travel"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-10-29"
+  }
+}

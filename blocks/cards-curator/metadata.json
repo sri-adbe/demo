@@ -1,0 +1,13 @@
+{
+  "variantName": "cards-curator",
+  "baseBlock": "cards",
+  "visualCharacteristics": "3-up portrait cards on white panels: image, location eyebrow, H3 name, bio, arrow link",
+  "reuseGuidance": "Lux template ('Template: lux'); reuse for the same content model and layout.",
+  "usage": {
+    "pagesUsing": [
+      "/lux-travel"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-10-29"
+  }
+}
