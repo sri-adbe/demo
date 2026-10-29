@@ -18,7 +18,8 @@ function renderTestimonial(row, path, fragment) {
   const body = document.createElement('div');
   instrumentFragment(body, path, fragment.attribution || 'Testimonial');
   const quote = document.createElement('p');
-  quote.textContent = fragment.quote || '';
+  // multi-line text comes back as { plaintext } from GraphQL
+  quote.textContent = fragment.quote?.plaintext ?? fragment.quote ?? '';
   instrumentField(quote, 'quote', 'Quote');
   body.append(quote);
   if (fragment.attribution) {
