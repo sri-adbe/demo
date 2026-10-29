@@ -33,6 +33,18 @@
             {
               "name": "Highlight",
               "value": "highlight"
+            },
+            {
+              "name": "Sand",
+              "value": "sand"
+            },
+            {
+              "name": "Centered",
+              "value": "centered"
+            },
+            {
+              "name": "Divider",
+              "value": "divider"
             }
           ]
         }
@@ -59,7 +71,13 @@
         "table",
         "text",
         "title",
-        "video"
+        "video",
+        "hero-lux",
+        "hero-cta",
+        "cards-curator",
+        "cards-destination",
+        "cards-service",
+        "cards-testimonial"
       ]
     }
   ]
