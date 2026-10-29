@@ -38,9 +38,11 @@ export function readFragmentPath(row) {
 export async function fetchFragment(query, path) {
   // AEM reads the variable as-is, so slashes must stay unencoded; only encode each segment
   const pathParam = path.split('/').map(encodeURIComponent).join('/');
-  const url = `${aemHost}/graphql/execute.json/${GRAPHQL_CONFIG}/${query};path=${pathParam}`;
+  let url = `${aemHost}/graphql/execute.json/${GRAPHQL_CONFIG}/${query};path=${pathParam}`;
+  // persisted query responses are cached; authors must see their edits right away
+  if (isAuthor) url += `?ts=${Date.now()}`;
   try {
-    const resp = await fetch(url, isAuthor ? { credentials: 'include' } : {});
+    const resp = await fetch(url, isAuthor ? { credentials: 'include', cache: 'no-store' } : {});
     if (!resp.ok) return { item: null, error: `HTTP ${resp.status} from ${query}` };
     const { data, errors } = await resp.json();
     const item = data && Object.values(data)[0]?.item;
